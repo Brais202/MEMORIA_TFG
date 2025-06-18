@@ -1,0 +1,175 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Development}{37}{chapter.5}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}System Design}{37}{section.5.1}\protected@file@percent }
+\newlabel{sec:SystemDesign}{{5.1}{37}{System Design}{section.5.1}{}}
+\citation{ref62}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces \xpg@aux {}{galician}NFC Physical Access Control System Architecture. Left part of the figure represents the physical door with a magnetic lock, connected with the NACU module with an NFC Reader. The right part represents the ACMS server authentication module}}{38}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:arch}{{5.1}{38}{\xpg@aux {\xpg@current@opts }{\languagename }NFC Physical Access Control System Architecture. Left part of the figure represents the physical door with a magnetic lock, connected with the NACU module with an NFC Reader. The right part represents the ACMS server authentication module}{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Personal Authentication Data Flow}{38}{subsection.5.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces \xpg@aux {}{galician}General Personal Authentication Data Flow of the Final System, from the Approach of the card to the NACU, to the final Authorization}}{40}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:flow_auth}{{5.2}{40}{\xpg@aux {\xpg@current@opts }{\languagename }General Personal Authentication Data Flow of the Final System, from the Approach of the card to the NACU, to the final Authorization}{figure.caption.27}{}}
+\citation{ref42}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces \xpg@aux {}{galician} NACU state diagram for personal authentication using NFC cards}}{41}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:nacu_states}{{5.3}{41}{\xpg@aux {\xpg@current@opts }{\languagename } NACU state diagram for personal authentication using NFC cards}{figure.caption.28}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Key Management System}{41}{subsection.5.1.2}\protected@file@percent }
+\citation{ref29}
+\citation{ref51}
+\citation{ref45}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces \xpg@aux {}{galician}Diagrama del sistema de gestión de claves. A la izquierda se representa la memoria de la tarjeta con NDEF y el conjunto protegido de claves, junto con la NACU y el ACMS.}}{43}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:key_management}{{5.4}{43}{\xpg@aux {\xpg@current@opts }{\languagename }Diagrama del sistema de gestión de claves. A la izquierda se representa la memoria de la tarjeta con NDEF y el conjunto protegido de claves, junto con la NACU y el ACMS}{figure.caption.29}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Initial prototyping and hardware assembly}{43}{section.5.2}\protected@file@percent }
+\newlabel{sec:NACU1}{{5.2}{43}{Initial prototyping and hardware assembly}{section.5.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}NFC Reader Integration with the Microcontroller}{43}{subsection.5.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces \xpg@aux {}{galician}MFRC522-Arduino UNO Wiring Following the SPI standard}}{44}{table.caption.30}\protected@file@percent }
+\newlabel{tab:mfrc522_arduino}{{5.1}{44}{\xpg@aux {\xpg@current@opts }{\languagename }MFRC522-Arduino UNO Wiring Following the SPI standard}{table.caption.30}{}}
+\citation{ref42}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces \xpg@aux {}{galician}MFRC522-ArduinoUNO Wiring Following the SPI standart}}{45}{figure.caption.31}\protected@file@percent }
+\newlabel{fig:MFRC-ArduinoUno}{{5.5}{45}{\xpg@aux {\xpg@current@opts }{\languagename }MFRC522-ArduinoUNO Wiring Following the SPI standart}{figure.caption.31}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Wi-Fi module integration}{46}{subsection.5.2.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces \xpg@aux {}{galician}ESP32-Arduino UNO Wiring Following the UART standard}}{46}{table.caption.32}\protected@file@percent }
+\newlabel{tab:esp32_arduino_uart}{{5.2}{46}{\xpg@aux {\xpg@current@opts }{\languagename }ESP32-Arduino UNO Wiring Following the UART standard}{table.caption.32}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces \xpg@aux {}{galician}ESP32-ArduinoUNO Wiring Following the UART standard}}{47}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:ESP32-ArduinoUno}{{5.6}{47}{\xpg@aux {\xpg@current@opts }{\languagename }ESP32-ArduinoUNO Wiring Following the UART standard}{figure.caption.33}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Physical lock integration}{47}{subsection.5.2.3}\protected@file@percent }
+\newlabel{sec:NACU2}{{5.2.3}{47}{Physical lock integration}{subsection.5.2.3}{}}
+\citation{Ref65}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces \xpg@aux {}{galician}Maglock-Arduino UNO Wiring, with the Arduino connected via 5 V and GND pins for power management to a relay, which obtains power from the voltage adapter to redirect it to the magnetic lock (shown on the right).}}{48}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:maglock_arduino}{{5.7}{48}{\xpg@aux {\xpg@current@opts }{\languagename }Maglock-Arduino UNO Wiring, with the Arduino connected via 5 V and GND pins for power management to a relay, which obtains power from the voltage adapter to redirect it to the magnetic lock (shown on the right)}{figure.caption.34}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}NFC Access Control Unit (NACU)}{48}{section.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Iteration 1: Basic NFC communication}{48}{subsection.5.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Secure NFC card UID Reading}{48}{subsubsection*.35}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces \xpg@aux {}{galician}NTAG424 card UID Read after performing mutual authentication with NFC Reader}}{49}{figure.caption.36}\protected@file@percent }
+\newlabel{fig:5.8}{{5.8}{49}{\xpg@aux {\xpg@current@opts }{\languagename }NTAG424 card UID Read after performing mutual authentication with NFC Reader}{figure.caption.36}{}}
+\citation{ref46}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Iteration 2: Providing basic Wi-Fi connectivity}{50}{subsection.5.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces \xpg@aux {}{galician}ESP32 WI-Fi module Shows UART Message via Serial Monitor}}{50}{figure.caption.37}\protected@file@percent }
+\newlabel{fig:5.9}{{5.9}{50}{\xpg@aux {\xpg@current@opts }{\languagename }ESP32 WI-Fi module Shows UART Message via Serial Monitor}{figure.caption.37}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Iteration 3: Mutual authentication and configuring NFC card identifiers}{51}{subsection.5.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{EV2 Mutual Authentication with AppKey}{51}{subsubsection*.38}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Configuring NFC card identifiers}{51}{subsubsection*.39}\protected@file@percent }
+\newlabel{subsubsection:cardidload}{{5.3.3}{51}{Configuring NFC card identifiers}{subsubsection*.39}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces \xpg@aux {}{galician}NTAG 424 NDEF memory file Writing in Plain Mode}}{52}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:5.10}{{5.10}{52}{\xpg@aux {\xpg@current@opts }{\languagename }NTAG 424 NDEF memory file Writing in Plain Mode}{figure.caption.40}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.4}Iteration 4: Reading NFC Card memory and Loading Cryptographic Keys}{52}{subsection.5.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Obtaining NFC card identifiers}{52}{subsubsection*.41}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces \xpg@aux {}{galician}NTAG 424 NDEF memory file reading in Plain Mode}}{53}{figure.caption.42}\protected@file@percent }
+\newlabel{fig:5.11}{{5.11}{53}{\xpg@aux {\xpg@current@opts }{\languagename }NTAG 424 NDEF memory file reading in Plain Mode}{figure.caption.42}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Key loading into the NFC card}{53}{subsubsection*.43}\protected@file@percent }
+\newlabel{subsubsection:keyload}{{5.3.4}{53}{Key loading into the NFC card}{subsubsection*.43}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces \xpg@aux {}{galician}Change of NFC NTAG424 card AppKey1, which needs EV2 mutual authentication}}{54}{figure.caption.44}\protected@file@percent }
+\newlabel{fig:5.12}{{5.12}{54}{\xpg@aux {\xpg@current@opts }{\languagename }Change of NFC NTAG424 card AppKey1, which needs EV2 mutual authentication}{figure.caption.44}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.5}Iteration 5: NACU Subsystem Full Integration}{54}{subsection.5.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Card UID and AES Key Transfer between NACU modules}{55}{subsubsection*.45}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces \xpg@aux {}{galician}ESP32 Wi-FI module receiving via UART NTAG 424 UID after plain read performed by the NFC Reader}}{55}{figure.caption.46}\protected@file@percent }
+\newlabel{fig:5.13}{{5.13}{55}{\xpg@aux {\xpg@current@opts }{\languagename }ESP32 Wi-FI module receiving via UART NTAG 424 UID after plain read performed by the NFC Reader}{figure.caption.46}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.6}Iteration 6: Magnetic lock Management for Physical Access Control}{55}{subsection.5.3.6}\protected@file@percent }
+\citation{Ref20}
+\citation{Ref61}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Access Control Management Server (ACMS)}{56}{section.5.4}\protected@file@percent }
+\newlabel{sec:ACMS}{{5.4}{56}{Access Control Management Server (ACMS)}{section.5.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Iteration 1: Basic Structure and Authentication}{56}{subsection.5.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Time Window Based Access Control and Auditory}{56}{subsubsection*.47}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces \xpg@aux {}{galician}MVC Schema Representing the Views, that are managed by the Controller, that extracts data from the Model}}{57}{figure.caption.48}\protected@file@percent }
+\newlabel{fig:mvc-schema}{{5.14}{57}{\xpg@aux {\xpg@current@opts }{\languagename }MVC Schema Representing the Views, that are managed by the Controller, that extracts data from the Model}{figure.caption.48}{}}
+\citation{Ref76}
+\@writefile{toc}{\contentsline {subsubsection}{Access Control Endpoints for Administration and NACU Communication}{58}{subsubsection*.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Iteration 2: Key Derivation System}{58}{subsection.5.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Hardware Security Module Implementation}{58}{subsubsection*.50}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces \xpg@aux {}{galician}Slots of HSM. Master01 and AppMasterKey are stored and labeled, with no access allowed and the type of object is secret-key}}{59}{figure.caption.51}\protected@file@percent }
+\newlabel{fig:hsm-slots}{{5.15}{59}{\xpg@aux {\xpg@current@opts }{\languagename }Slots of HSM. Master01 and AppMasterKey are stored and labeled, with no access allowed and the type of object is secret-key}{figure.caption.51}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Key Derivation System Integration in ACMS}{59}{subsubsection*.52}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Key Derivation Endpoint}{59}{subsubsection*.53}\protected@file@percent }
+\citation{Ref47}
+\citation{Ref48}
+\citation{Ref49}
+\citation{Ref50}
+\citation{Ref77}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.3}Iteration 3: Transport encryption (HTTPS/TLS)}{60}{subsection.5.4.3}\protected@file@percent }
+\newlabel{subsec:https}{{5.4.3}{60}{Iteration 3: Transport encryption (HTTPS/TLS)}{subsection.5.4.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{ACMS Communication Encryption}{60}{subsubsection*.54}\protected@file@percent }
+\citation{Ref78}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.4}Iteration 4: Real Time Access Control Mail Alert System}{61}{subsection.5.4.4}\protected@file@percent }
+\newlabel{subsec:email}{{5.4.4}{61}{Iteration 4: Real Time Access Control Mail Alert System}{subsection.5.4.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Mail Alert System Implementation in Django}{61}{subsubsection*.55}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.5}Iteration 5: Role-Based Access Control}{62}{subsection.5.4.5}\protected@file@percent }
+\newlabel{subsec:roles}{{5.4.5}{62}{Iteration 5: Role-Based Access Control}{subsection.5.4.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Full System Integration \\ \& Testing}{62}{section.5.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces \xpg@aux {}{galician}Test Users Definition with UID and schedule}}{63}{table.caption.56}\protected@file@percent }
+\newlabel{tab:test-users}{{5.3}{63}{\xpg@aux {\xpg@current@opts }{\languagename }Test Users Definition with UID and schedule}{table.caption.56}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces \xpg@aux {}{galician}Test Users (1--3) Creation without Role assignation}}{63}{figure.caption.57}\protected@file@percent }
+\newlabel{fig:test-users}{{5.16}{63}{\xpg@aux {\xpg@current@opts }{\languagename }Test Users (1--3) Creation without Role assignation}{figure.caption.57}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.17}{\ignorespaces \xpg@aux {}{galician}NDEF File Read Integration}}{64}{figure.caption.58}\protected@file@percent }
+\newlabel{fig:ndef-read}{{5.17}{64}{\xpg@aux {\xpg@current@opts }{\languagename }NDEF File Read Integration}{figure.caption.58}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces \xpg@aux {}{galician}Mutual Authentication in the Final System}}{64}{figure.caption.59}\protected@file@percent }
+\newlabel{fig:mutual-auth}{{5.18}{64}{\xpg@aux {\xpg@current@opts }{\languagename }Mutual Authentication in the Final System}{figure.caption.59}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.19}{\ignorespaces \xpg@aux {}{galician}Mail Acknowledging Denied Access}}{65}{figure.caption.60}\protected@file@percent }
+\newlabel{fig:denied-mail}{{5.19}{65}{\xpg@aux {\xpg@current@opts }{\languagename }Mail Acknowledging Denied Access}{figure.caption.60}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.20}{\ignorespaces \xpg@aux {}{galician}Personal authentication data flow for the test case}}{65}{figure.caption.61}\protected@file@percent }
+\newlabel{fig:Personal Auth Data Flow}{{5.20}{65}{\xpg@aux {\xpg@current@opts }{\languagename }Personal authentication data flow for the test case}{figure.caption.61}{}}
+\citation{Ref54}
+\citation{Ref51}
+\citation{Ref55}
+\citation{Ref57}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.21}{\ignorespaces \xpg@aux {}{galician}USER1 Access Allowed Arduino Uno Serial Monitor Data Flow}}{66}{figure.caption.62}\protected@file@percent }
+\newlabel{fig:uid-ok}{{5.21}{66}{\xpg@aux {\xpg@current@opts }{\languagename }USER1 Access Allowed Arduino Uno Serial Monitor Data Flow}{figure.caption.62}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.6}Threat Analysis}{66}{section.5.6}\protected@file@percent }
+\newlabel{sec:threat_analysis}{{5.6}{66}{Threat Analysis}{section.5.6}{}}
+\@setckpt{contido/development}{
+\setcounter{page}{68}
+\setcounter{equation}{0}
+\setcounter{enumi}{8}
+\setcounter{enumii}{3}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{6}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{21}
+\setcounter{table}{3}
+\setcounter{DefaultLines}{2}
+\setcounter{DefaultDepth}{0}
+\setcounter{L@lines}{0}
+\setcounter{L@depth}{0}
+\setcounter{@pps}{0}
+\setcounter{@ppsavesec}{0}
+\setcounter{@ppsaveapp}{0}
+\setcounter{parentequation}{0}
+\setcounter{IEEEsubequation}{0}
+\setcounter{lstnumber}{1}
+\setcounter{NAT@ctr}{0}
+\setcounter{caption@flags}{2}
+\setcounter{continuedfloat}{0}
+\setcounter{subfigure}{0}
+\setcounter{subtable}{0}
+\setcounter{blindtext}{1}
+\setcounter{Blindtext}{5}
+\setcounter{blind@countparstart}{0}
+\setcounter{blindlist}{0}
+\setcounter{blindlistlevel}{0}
+\setcounter{blindlist@level}{0}
+\setcounter{blind@listcount}{0}
+\setcounter{blind@levelcount}{0}
+\setcounter{blind@randomcount}{0}
+\setcounter{blind@randommax}{0}
+\setcounter{blind@pangramcount}{0}
+\setcounter{blind@pangrammax}{0}
+\setcounter{section@level}{0}
+\setcounter{Item}{50}
+\setcounter{Hfootnote}{0}
+\setcounter{Hy@AnnotLevel}{0}
+\setcounter{bookmark@seq@number}{69}
+\setcounter{BackrefHyperFootnoteCounter}{0}
+\setcounter{LT@tables}{0}
+\setcounter{LT@chunks}{0}
+\setcounter{float@type}{8}
+\setcounter{lstlisting}{0}
+}

@@ -1,0 +1,45 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \xpg@aux {}{galician}Connectivity diagram of Arduino UNO hardware development board}}{5}{figure.caption.4}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces \xpg@aux {}{galician}Connectivity diagram of ESP32 hardware development board}}{7}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces \xpg@aux {}{galician}AES-128 Encryption Process, including Substitution, Shift, MixColumns, and AddRoundKey}}{9}{figure.caption.6}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \xpg@aux {}{galician}HID® multiCLASS SE® RK40 NFC PIN Reader, HID ICLASS SE card and tag}}{17}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \xpg@aux {}{galician}NTAG424 mutual authentication diagram, random nonces and session keys exchange}}{19}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \xpg@aux {}{galician}MIFARE Classic card}}{23}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \xpg@aux {}{galician}NTAG EV2 Authentication using AES-128 encryption: on the left PCD (reader) and on the right PICC (NTAG)}}{24}{figure.caption.15}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \xpg@aux {}{galician}Kanban Board at Early Stages of the Project}}{33}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \xpg@aux {}{galician}Gantt Diagram representing all the phases of the project and the time in weeks that was spent on each one, along with its deviation from the original duration}}{34}{figure.caption.21}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \xpg@aux {}{galician}NFC Physical Access Control System Architecture. Left part of the figure represents the physical door with a magnetic lock, connected with the NACU module with an NFC Reader. The right part represents the ACMS server authentication module}}{38}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \xpg@aux {}{galician}General Personal Authentication Data Flow of the Final System, from the Approach of the card to the NACU, to the final Authorization}}{40}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces \xpg@aux {}{galician} NACU state diagram for personal authentication using NFC cards}}{41}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces \xpg@aux {}{galician}Diagrama del sistema de gestión de claves. A la izquierda se representa la memoria de la tarjeta con NDEF y el conjunto protegido de claves, junto con la NACU y el ACMS.}}{43}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces \xpg@aux {}{galician}MFRC522-ArduinoUNO Wiring Following the SPI standart}}{45}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces \xpg@aux {}{galician}ESP32-ArduinoUNO Wiring Following the UART standard}}{47}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces \xpg@aux {}{galician}Maglock-Arduino UNO Wiring, with the Arduino connected via 5 V and GND pins for power management to a relay, which obtains power from the voltage adapter to redirect it to the magnetic lock (shown on the right).}}{48}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces \xpg@aux {}{galician}NTAG424 card UID Read after performing mutual authentication with NFC Reader}}{49}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces \xpg@aux {}{galician}ESP32 WI-Fi module Shows UART Message via Serial Monitor}}{50}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces \xpg@aux {}{galician}NTAG 424 NDEF memory file Writing in Plain Mode}}{52}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces \xpg@aux {}{galician}NTAG 424 NDEF memory file reading in Plain Mode}}{53}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces \xpg@aux {}{galician}Change of NFC NTAG424 card AppKey1, which needs EV2 mutual authentication}}{54}{figure.caption.44}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces \xpg@aux {}{galician}ESP32 Wi-FI module receiving via UART NTAG 424 UID after plain read performed by the NFC Reader}}{55}{figure.caption.46}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces \xpg@aux {}{galician}MVC Schema Representing the Views, that are managed by the Controller, that extracts data from the Model}}{57}{figure.caption.48}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces \xpg@aux {}{galician}Slots of HSM. Master01 and AppMasterKey are stored and labeled, with no access allowed and the type of object is secret-key}}{59}{figure.caption.51}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces \xpg@aux {}{galician}Test Users (1--3) Creation without Role assignation}}{63}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces \xpg@aux {}{galician}NDEF File Read Integration}}{64}{figure.caption.58}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces \xpg@aux {}{galician}Mutual Authentication in the Final System}}{64}{figure.caption.59}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces \xpg@aux {}{galician}Mail Acknowledging Denied Access}}{65}{figure.caption.60}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces \xpg@aux {}{galician}Personal authentication data flow for the test case}}{65}{figure.caption.61}%
+\contentsline {figure}{\numberline {5.21}{\ignorespaces \xpg@aux {}{galician}USER1 Access Allowed Arduino Uno Serial Monitor Data Flow}}{66}{figure.caption.62}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \xpg@aux {}{galician}NACU and Test Cards. From left to right, the Arduino Uno, MFRC522, ESP32 and magnetic lock can be seen. Also, the three cards at the back are the ones used to test the system.}}{69}{figure.caption.63}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces \xpg@aux {}{galician}ACMS Architecture Scheme including HSM, the web server and the default Django model database}}{70}{figure.caption.64}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces \xpg@aux {}{galician}Administration Default Login system}}{71}{figure.caption.65}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces \xpg@aux {}{galician}Log List Administration View}}{72}{figure.caption.66}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces \xpg@aux {}{galician}Key Management System in the HSM}}{74}{figure.caption.68}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces \xpg@aux {}{galician}Role Management view}}{75}{figure.caption.69}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces \xpg@aux {}{galician}Unauthorized Mails Example}}{76}{figure.caption.70}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

@@ -1,0 +1,23 @@
+\chapter{Conclusions and Future Research}
+\label{chap:conclusions}
+The development and integration of an NFC-based secure access control system presents a number of complex challenges spanning hardware, firmware and backend services. The implementation of mutual authentication with ISO 14443 A (EV2) and AppKey0 derivation using HMAC-SHA256 in a hardware security module has proven effective in ensuring the confidentiality, authenticity and integrity of CardId and UID exchanges. The modular architecture of the system ,consisting of an Arduino, ESP32 and MFRC522 NFC Access Control Unit(NACU), a Django REST API and a SoftHSM2 HSM (or equivalent), facilitates a clear separation of concerns, simplifies maintenance and allows testing of individual components in isolation. 
+
+Also, the prototype’s academic orientation leaves several practical aspects unaddressed, notably physical protection of wiring, deployment automation (e.g., with containers or orchestration) and comprehensive side‑channel resistance. Moreover, while SoftHSM2 emulates production HSM behavior, real hardware modules may exhibit different performance and security characteristics, which warrants further validation.
+
+\section{Future Research}
+\label{sec:future_research}
+Several research lines can be followed in order to expand the functionalities, security and performance of the system:
+
+\begin{itemize}
+	\item \textbf{Physical and Embedded Hardening.} Investigate the design of a rugged, shielded enclosure that protects both the reader and the UART connections between Arduino and ESP32. This would include tamper-evidence scans and intrusion sensors, as well as the use of microcontrollers with secure enclaves such as TrustZone~\cite{Ref56}.
+	
+	\item \textbf{Integration with Mobile Apps and Biometrics.} Extend the NFC flow to incorporate an additional biometric-based authentication factor (fingerprint or facial recognition) through a mobile app, exploring APIs such as Android BiometricPrompt~\cite{Ref57}.
+	
+	\item \textbf{Automated Deployment and Orchestration.} Dockerize the ACMS to facilitate deployment in production environments, including setting up secure networks on AWS and continuous integration (CI/CD)~\cite{Ref58}.
+	
+	\item \textbf{Evolution to Commercial HSM Hardware.} Replace SoftHSM2 with certified HSM modules and measure actual throughput, latency and power consumption metrics. Compare their resilience against side-channel attacks and TLS certificate validation.
+	
+	\item \textbf{Dynamic Credential and KeyWheel Support.} Investigate hot AppKey0 and MasterKey key rotation schemes, as well as transitive or delegated credentials, for scenarios where multiple systems must validate the same card without sharing the master key.
+	
+	\item \textbf{Anomaly Detection and Machine Learning.} Develop behavioral analysis modules based on machine learning that monitor access patterns (read rate, time locations) and alert on unusual attempts or advanced relay attacks~\cite{Ref59}.
+\end{itemize}

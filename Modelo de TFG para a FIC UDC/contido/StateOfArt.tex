@@ -1,0 +1,345 @@
+\chapter{State of the Art}
+\label{chap:state_of_the_art}
+
+The objective of this section is to review current regulatory frameworks, hardware and software components, and advanced security schemes relevant to NFC-based access control.
+
+
+\section{NFC Frameworks and Standards}
+
+This section reviews the principal ISO/IEC standards that govern contactless cards interoperability, security and form factor. We examine ISO/IEC 14443 \cite{Ref23} for proximity communication protocols, ISO/IEC 7816-4 \cite{Ref24} for APDU-based command structures and ISO/IEC 7810 \cite{Ref25} for physical card dimensions.
+
+\subsection{Contactless personal identification: ISO/IEC 14443}
+
+ISO/IEC 14443 \cite{Ref23} is the international standard that defines how contactless identification devices (e.g., smart cards, RFID key fobs or NFC readers) should communicate at close range (up to about 10 cm) with reader stations.
+
+It is structured in four complementary blocks that cover from the physical characteristics of the cards to the data exchange protocols and the mechanisms for managing multiple transponders simultaneously. An overview of each of these four components is presented below \cite{Ref65}:
+
+\begin{itemize}
+	\item \textbf{Part 1: Physical Characteristics.} Establishes the physical specifications of proximity cards, such as their size and format (ISO/IEC 7810 ID-1). It ensures that devices comply with a common physical standard, which is essential for hardware compatibility between different implementations.
+	
+	\item \textbf{Part 2: Signaling and transmission.} Defines the modulation and coding parameters of the signal. In Type A mode, ASK (Amplitude Shift Keying) modulation at 13.56 MHz with Manchester coding is used. In Type B mode, ASK-BPSK (Binary Phase Shift Keying) is used to avoid collisions. These schemes guarantee the robustness of wireless communication.
+	
+	\item \textbf{Part 3: Initialization and anti-collision.} Introduces the card detection and selection process. The anti-collision technique allows the identification of multiple cards within the reading field by assigning unique identifiers (UIDs). This feature is essential in environments where multiple cards may be present simultaneously.
+	
+	\item \textbf{Part 4: Transmission Protocol.} Details the exchange of commands and data between the card and the reader. It supports a transmission structure based on data blocks, where commands such as authentication, read, write and encryption are handled. This is critical in security applications, where a secure exchange of information is required.
+\end{itemize}
+
+Compliance with ISO/IEC 14443 ensures that both NFC chips and readers (e.g., NTAG424 DNA and PN532) operate under a standard and optimized protocol. The following aspects are key:
+
+\begin{itemize}
+	\item \textbf{Interoperability:} it allows the integration of different devices that follow the same standard, reducing compatibility issues between hardware and access control software \cite{Ref66}.
+	
+	\item \textbf{Security:} The standard supports authentication and encryption mechanisms at the protocol level, which is essential for protecting data in sensitive applications such as access control. In combination with algorithms such as AES-128 implemented in the NTAG424 DNA chips, the system can perform secure and encrypted authentication \cite{Ref67}.
+	
+	\item \textbf{Transmission efficiency:} The modular transmission structure ensures that data is exchanged quickly and reliably while maintaining low latency, which is crucial in real-time access systems.
+\end{itemize}
+
+\subsection{Identification cards communication: ISO/IEC 7816-4}
+
+ISO/IEC 7816-4 \cite{Ref24} establishes the common language and the structure of the messages (APDUs) that allow a reader and a card to exchange instructions and data in an orderly and secure manner. This standard is key in applications that require authentication and secure transmission, such as NFC access control.
+
+In this context, ISO/IEC 7816-4 specifies key technical aspects that enable these functionalities, including the use of APDU structures, system response management and transmission control protocols. These elements are described below to understand how they contribute to secure system operation \cite{Ref68}:
+
+\begin{itemize}
+	\item \textbf{APDU (Application Protocol Data Unit):} APDUs are the basis of communication between card and reader, divided into two types:
+	\begin{itemize}
+		\item \textit{Command APDU:} Contains the command, with a header consisting of the CLA (instruction class), INS (instruction), P1 and P2 (parameters) fields, together with the data and the Le (expected length of response) field.
+		\item \textit{Response APDU:} Returns the requested data and the SW1 SW2 status code.
+	\end{itemize}
+	
+	\item \textbf{Application Selection:} The SELECT command allows you to choose an application on the card based on its AID (Application Identifier), making it easy to interact with cards that manage multiple applications.
+	
+	\item \textbf{File Management:} The card manages structured data files, with READ, WRITE and UPDATE commands. These commands allow secure control of stored information.
+	
+	\item \textbf{Authentication and Encryption:} ISO/IEC 7816-4 supports authentication and encryption mechanisms through the use of keys, facilitating the implementation of AES or DES to secure communications.
+\end{itemize}
+
+In the NFC access control system, ISO/IEC 7816-4 enables secure transmission using APDUs, which support credential management and two-factor authentication. NTAG424 DNA chips, with AES-128 encryption capability, can be efficiently integrated using this standard to ensure that the exchanged data is protected and structured correctly.
+
+\subsection{Contactless cards: ISO/IEC 7810}
+
+ISO/IEC 7810 \cite{Ref25} defines the physical dimensions and general characteristics of identification cards, including NFC cards used in access control systems. This standard establishes specifications for the manufacture of ID cards in several standard formats, the most common being:
+
+\begin{itemize}
+	\item \textbf{ID-1 format:} 85.60 mm × 53.98 mm dimensions, typical of credit and debit cards.
+	\item \textbf{ID-2 format:} 105 mm × 74 mm, like passport size.
+	\item \textbf{ID-3 format:} 125 mm × 88 mm, used in passports and other travel documents.
+	\item \textbf{ID-000 format:} 25 mm × 15 mm, smaller size format used in SIM cards.
+\end{itemize}
+
+Each format specifies a thickness of 0.76 mm \cite{Ref25}, providing consistency in the cards for handling and reading in devices. These standards enable interoperability in systems that require user identification and verification, ensuring that cards fit into readers and access control devices in a uniform manner.
+
+ISO/IEC 7810 is especially relevant for identification and authentication applications, such as NFC-based access control systems. Standardized dimensions and physical properties ensure that cards remain uniform, which facilitates their integration into NFC devices and card readers. In addition, this standard allows the card design to be rugged and durable, withstanding repeated use in access control environments.
+
+
+
+\section{NFC secure access control systems}
+
+The following section reviews advanced NFC security schemes and their practical applications. In recent years, NFC technology has transcended its original use as a means of proximity reading to become the basis for multi-level security architectures. By combining cryptographic elements, challenge-response protocols and additional authentication factors, it is possible to ensure both data confidentiality and communication integrity. In addition, the integration of NFC with IoT platforms and cloud services enables dynamic and remote management of access to facilities \cite{Ref69}.
+
+Before getting into advanced schemes, it is useful to understand the most common starting point for NFC access control applications: authentication by unique UID reading. This method simply consists of matching the unique identifier engraved on the chip with an authorized list on the server; its main virtue is simplicity, as it does not require complex cryptographic protocols or additional key exchange. However, since it is based exclusively on a static value that can be easily captured and duplicated, it lacks protection mechanisms against cloning or replay attacks.
+
+These limitations are particularly evident when using cards such as MIFARE Classic, whose security has been widely compromised \cite{ref70} (see \ref{sec:NFCCards}). It is therefore necessary to contrast these ``basic'' systems with solutions that incorporate encryption, mutual authentication and other dynamic security factors.
+
+\subsection{NFC Cards and PIN}
+
+One robust security solution commonly offered related to the NFC technology is its combination with PIN authentication. Pins are short passwords, usually formed by numbers (although they may contain another type of characters), they are usually four to six characters long. On the one hand, PINS are easy to remember by humans. On the other hand, they are easy to guess or hack. In order to try to mitigate this, they usually have some kind of restriction regarding the number of tries an user has before being locked out \cite{ref30}.
+
+The combination of these two technologies is based on the concept of multifactor authentication, users authenticate using something they have (NFC card) and something they know (PIN). There are two approaches in the usage of PIN in this type of system, using the same PIN for every user or using one for each user.
+
+Leading companies like HID global offer several hardware solutions like the HID® multiCLASS SE® RK40 \cite{ref75}, figure~\ref{fig:hid_multiclass}, that is one single module including an NFC reader and a keypad.
+
+\begin{figure}[h!]
+	\includegraphics[width=0.6\textwidth]{imaxes/pinhid.png} 
+	\caption{HID® multiCLASS SE® RK40 NFC PIN Reader, HID ICLASS SE card and tag}
+	\label{fig:hid_multiclass}
+\end{figure}
+
+\subsection{NFC with Biometrics}
+
+Biometrics are personal authenticators related to a physical human trait that can unequivocally identify a person. It should be permanent, measurable in a quick and easy way, and fast to compare against stored information.
+
+The convergence of NFC technology with biometric authentication systems has given rise to advanced security and usability solutions in various fields. It is widely used in access control systems, secure payment methods and smartphone authentication \cite{ref83}. This integration allows the identification and verification of users in an efficient and secure manner, taking advantage of the benefits of both technologies. It is also based on the concept of multifactor authentication, where users authenticate using something they have (NFC card) and something they are (biometric).
+
+Biometrics popularity is due to its lack of change during time, the most used biometric is the fingerprint, unique pattern of whorls and lines on the fingertips of a person. For centuries, it has been a reliable method of identifying people; from a crime record to a passport. Also, fingerprint readers use four different technologies: optical, which records an image; capacitance, ultrasonic and thermal, which identify and map ridges \cite{ref30}. There are also other biometrics that can be used but not to the same extent that are: hand geometry, iris, retina, face and voice.
+
+\subsection{Enhanced Version 2 (EV2) NFC Mutual Authentication protocol}
+\label{subsec:EV2}
+
+Enhanced Version 2 (EV2) \cite{ref29} is NXP’s latest mutual-authentication scheme for NFC cards, built on ISO/IEC 14443-4 framing and AES-128 CMAC. EV2 ensures that both reader (PCD) and card (PICC) prove knowledge of a shared secret and derive fresh session keys on each transaction, protecting against replay, cloning and man-in-the-middle attacks.
+
+Mutual authentication using AES-128 is a common practice in various industries that require secure communications and protection against unauthorized access. One of the most secure protocols in the access control industry which uses mutual authentication and AES-128 is SEOS \cite{ref31}, developed by HID and has its own SEOS cards. Which consists of an AES-128 encryption key for protecting data confidentiality and a MAC key that guarantees message integrity by means of authentication codes.
+
+The EV2 exchange adheres to ISO/IEC 14443-4 command structure:
+\begin{enumerate}
+	\item The card is selected and detected, in which the reader is aware of the card and sends it a WAKE-UP command, which is responded with its corresponding ATQA (Answer to Request).
+	\item The communication is established using the commands RATS (Request for Answer to Select) and ATS (Answer to Select).
+	\item The reader sends an AES-128 encrypted challenge to the card. The card decrypts and responds with another encrypted challenge. If both challenges are successful, a secure channel is established.
+	\item APDU (Application Protocol Data Units) commands are sent to read credentials inside the Seos™ Vault, the card returns the encrypted data, ensuring its integrity by means of the MAC key.
+\end{enumerate}
+
+In addition to SEOS, NXP’s broader MIFARE family, NTAG 424 DNA and DESFire EV2/EV3 \cite{ref32}, implements EV2 mutual authentication to different ends. NTAG 424 DNA’s EV2 protocol is trusted by vendors like RFID.it, Shenzhen Focused Smartech Co., Seritag, and ZipNFC \cite{ref84}; it follows the EV2 flow described above and activates CMAC-based confidentiality and integrity once the challenge–response succeeds (Figure~\ref{fig:ntag424_ev2}). MIFARE DESFire EV2/EV3 offers a comparable process but introduces variations in session-key handling and secure-messaging (IV + SM) to meet diverse application requirements.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{imaxes/MA_diagram.png} % Cambia el nombre por tu imagen real
+	\caption{NTAG424 mutual authentication diagram, random nonces and session keys exchange}
+	\label{fig:ntag424_ev2}
+\end{figure}
+
+\subsection{NFC with Internet Of Things}
+
+The Internet of Things (IoT) refers to a network of interconnected physical devices like sensors, actuators and embedded systems that communicate and exchange data over the Internet to enable intelligent automation and monitoring. The use of NFC, combined with the IoT, has enabled the development of advanced access control and management systems. These systems offer enhanced security, real-time traceability and greater automation compared to traditional methods based on static credentials. The combination of these technologies takes advantage of leverage short-range wireless communication capabilities to improve connectivity, interaction and management of IoT devices \cite{ref33}.
+
+These systems are capable of implementing authentication and access control in secure infrastructures, managing assets in real-time, remotely monitoring through cloud platforms and automating processes without human intervention \cite{ref34}.
+
+The most typical architecture of these types of systems is based on ESP32, which allows communication via the internet. Also, several devices can be part of these systems with different functionalities, the most remarkable in the access control field are:
+\begin{itemize}
+	\item Cameras: they use ESP32 to communicate
+	\item Locks: they use ESP32 to communicate
+	\item Smart Sensors: Devices that monitor environmental variables such as movement, and can communicate via NFC to turn on the lights.
+\end{itemize}
+
+There are several companies implementing these technologies such as Bosch Security and Safety Systems, which offer advanced access control solutions that integrate NFC and IoT technology. Its systems enable centralized access management in real time, using NFC-enabled mobile devices to authenticate users and control entrances to facilities. It is also interesting to mention Honeywell International, that has developed access control systems that incorporate NFC and IoT to provide secure authentication and efficient access management in corporate and industrial environments.
+
+\subsection{NFC with Cloud}
+
+Cloud services are remote computing resources such as storage, processing power and software applications hosted on distributed servers and accessed over the Internet. The combination of NFC and cloud services has boosted the development of advanced solutions for access management, authentication and user traceability. These systems allow data to be stored and processed on cloud servers, eliminating dependence on local storage and facilitating real-time access from any device with an Internet connection. In addition, they offer scalability, redundancy and advanced security through data encryption and multi-layered authentication \cite{ref35}.
+
+There are some projects which can be used as examples of the different ways of implementing this technology. A cloud-based attendance management system that uses NFC cards to record employee check-in and check-out, reducing human error and increasing operational efficiency \cite{ref36}. These systems usually use TLS to communicate with the webserver, in this case, it sends the information with the UID of the NFC tag and records the hour the employee attended to the facilities in the webserver. Also, there are other projects that are similar \cite{ref37} that use the same function but in this case it uses the arduino database and a web server programmed in php which stores name, date and id. These resources can be hosted on AWS, Google Cloud or Microsoft Azure, which offer a higher level of scalability and security.
+
+\subsection{NFC with Locks}
+
+In the field of access control systems, there are various electronic lock technologies that differ according to their operating mechanisms, installation requirements and operating and maintenance costs. High-security mechanical locks, based on cylinders and latches reinforced with high-strength alloys, offer great robustness against physical attacks but are incompatible with centralized credential management solutions and have high maintenance costs. Electromechanical locks—such as electric frame locks or recessed solenoids—allow integration with card or code control systems by introducing a motorized actuator but have high power consumption and reduce their effectiveness after a certain number of mechanical cycles \cite{ref38}.
+
+Stand-alone electronic locks, or ``smart locks'', incorporate microcontrollers, RFID or Bluetooth readers and internal batteries, which facilitate access management via smartphones, wireless networks or digital credentials, at the cost of a higher unit cost and a complexity of configuration and security that, if not properly managed, can introduce new vulnerabilities. Compared to these alternatives, magnetic locks stand out for their simplicity of construction, their durability and their ability to be integrated into large-scale infrastructures. These devices consist of an electromagnet rigidly fixed to the door frame and a ferromagnetic plate installed in the door leaf; when tension is applied, a holding force is generated that can exceed 600 kg, guaranteeing resistance to forced opening attempts.
+
+With no moving parts, magnetic locks minimize mechanical wear and maintenance costs, and by operating in ``fail-safe'' mode, releasing the door when the power fails, they naturally meet evacuation requirements in emergency situations requiring immediate release of exits. In addition, their installation requires only two conductors and one signal contact, which simplifies wiring standardization and favors their adoption at multiple control points (gates, turnstiles, barriers), maintaining operational consistency and facilitating centralized management \cite{ref39}. Also, these types of locks allow the usage of REX (request-to-exit) devices, which release the door control mechanisms and facilitate safe egress.
+
+\subsubsection{REX (request-to-exit)}
+
+A Request-to-Exit (REX) sensor is an access control device that guarantees the free opening of an exit door fitted with an electric magnetic lock, without the need to enter credentials, by detecting the proximity of a person using infrared, microwave or laser scanning technologies; when activated, it sends a signal to deactivate the electromagnet and allow immediate passage. Equivalently, many installations use push buttons or panic bars mounted on the door leaf: their simple mechanical actuation interrupts the power supply to the maglock, releasing it instantly and ensuring both rapid evacuation and compliance with safety and accessibility regulations. Solutions such as ASSA ABLOY's Aperio systems \cite{ref40} or Bosch Security Systems' security doors \cite{ref41} often integrate REX sensors and push-button or panic bar optics interchangeably, adapting to the operational and compliance needs of each environment.
+
+
+\section{NFC cards}
+\label{sec:NFCCards}
+
+This section presents the main families of NFC cards used in identification and access control applications, with special emphasis on their technical characteristics, storage capacities and security mechanisms. Although there are multiple manufacturers of NFC-compatible chips and cards, the market for secure identification solutions is largely dominated by NXP Semiconductors \cite{ref80}. It develops the most widely used NFC cards, including MIFARE, DESFire, NTAG and SmartMX. Also, there are other companies such as Infineon Technologies, which offer secure NFC tags too, such as the OPTIGA Authenticate and secure memory chips \cite{ref82}. In this section, MIFARE Classic is exposed due to its importance in the early stages of this technology, which then leads to the evolution into other cards that support cryptographic operation for increased security, such as NTAG424.
+
+\subsection{MIFARE Classic and similar NFC cards}
+
+MIFARE Classic \cite{Ref28}, figure~\ref{fig:mifare_classic} \cite{ref81}, is a model of NFC card that was introduced as a cost-effective and widely compatible solution, operating in the 13.56 MHz band and based on the ISO/IEC 14443-A standard. These cards offer limited storage capacity, designed primarily for simple applications such as public transportation, basic access and small payments. They were pioneers in identification systems, enabling popularization of the use of NFC. Also, due to their low cost and simplicity, they were massively implemented in environments with basic security needs.
+
+MIFARE Classic are vulnerable to cloning attacks due to their Crypto1 encryption scheme, considered weak by current standards \cite{ref70}. These vulnerabilities have limited their use in applications requiring high levels of security. The model of cards is gradually being replaced by more secure technologies such as MIFARE DESFire or NTAG 413 DNA, which implement advanced encryption such as AES \cite{ref71}. However, widespread deployment and cost constraints mean that many organizations still rely on these insecure cards, delaying a full migration to more robust alternatives.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.4\textwidth]{imaxes/mifare1.jpg} % Cambia el nombre por tu imagen real
+	\caption{MIFARE Classic card}
+	\label{fig:mifare_classic}
+\end{figure}
+
+\subsection{NTAG 424 DNA}
+
+With the growing demand for security, new solutions in the NFC card field have emerged, such as the NTAG 424 DNA \cite{ref29} cards, developed by NXP Semiconductors, which offer significant improvements over their predecessors. This card incorporates the AES-128 encryption standard, providing stronger protection against cloning attempts and unauthorized access. Also, they integrate SUN (Secure Unique NFC) Authentication technology, which allows the generation of unique and secure messages in each interaction, ensuring the authenticity of the communication and preventing replay attacks. Importantly, NTAG 424 DNA fully supports the Enhanced Version 2 (EV2) mutual-authentication protocol, allowing them to establish secure channels with NFC readers.
+
+NTAG 424 DNA is able to generate unique and random identifiers for each transaction, enhancing user privacy and preventing unauthorized tracking. In addition, they are designed to be fully compatible with standard NFC devices, facilitating their integration into mobile applications and modern systems. Last but not least, one of the key features of this card is its communication speed, which can be highlighted in faster data transfer rates and improving efficiency in operations that require real-time information exchange.
+
+\subsection{Key Management with NTAG424}
+\label{subsec:keymanagement}
+
+The NTAG 424 DNA card integrates a robust cryptographic key management system designed to ensure secure and flexible access control and data protection. This system is based on key hierarchy and diversification, allowing for the generation of unique keys per tag and application, while maintaining compatibility with shared functionalities when necessary.
+
+As described in Section 8.2.4 of the official NXP datasheet \cite{ref42}, the card supports a key diversification mechanism using a Master Personalization Key (or Master Secret) that is securely stored and managed in the backend infrastructure. This master key is used only during initialization or key regeneration processes to derive diversified keys.
+
+The NTAG 424 DNA supports five distinct 128-bit AES keys, each with specific roles in the authentication and access control structure:
+
+\begin{itemize}
+	\item \textbf{AppKey0}: Used for mutual authentication Enhanced version 2 (EV2) standard, as seen in figure~\ref{fig:ntag424_ev2} \cite{ref42}, and read access to NDEF (NFC Data Exchange Format) files.
+	\item \textbf{AppKey1}: Enables writing to NDEF files and allows verification of data integrity via CMACs.
+	\item \textbf{AppKey2}: Grants access to proprietary data files that may contain sensitive or application-specific information.
+	\item \textbf{AppKey3}: Controls access to advanced security features, such as SDM (Secure Dynamic Messaging), which allows protected reading of encrypted and integrity-checked data.
+	\item \textbf{AppKey4}: Reserved for extended functionalities and future implementations.
+\end{itemize}
+
+Each key slot supports a Key Version Byte (1 byte) that identifies the current version of the key, enabling efficient management and update of credentials. This feature is particularly useful in systems where key rotation or renewal is a security requirement. Moreover, the tag allows for key updating and configuration through authenticated sessions using the ChangeKey and ChangeKeySettings commands. These operations can only be performed after a successful mutual authentication, ensuring that key management remains secure and protected against unauthorized access.
+
+This architecture provides a balance between security, scalability, and flexibility, making the NTAG 424 DNA suitable for a wide range of secure NFC applications, including access control, secure identification, and ticketing systems.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{imaxes/EV2ntag.png} % Cambia el nombre por tu imagen real
+	\caption{NTAG EV2 Authentication using AES-128 encryption: on the left PCD (reader) and on the right PICC (NTAG)}
+	\label{fig:ntag424_ev2}
+\end{figure}
+
+\section{Libraries and modules for NFC readers}
+
+In the Arduino ecosystem and compatible microcontrollers, two of the most commonly used reader-library combinations for working with NTAG424 DNA cards are the following.
+
+\subsection{MFRC522\_NTAG424DNA}
+
+The MFRC522\_NTAG424DNA library \cite{ref26} facilitates the interaction of a microcontroller (e.g., Arduino) with NFC NTAG424 DNA cards through the MFRC522 reader. It aims to provide a simple and robust interface for identification, data read/write and key management operations in secure applications (access control, traceability, etc.).
+
+The NTAG424 DNA supports three communication modes, differentiated by the level of protection and the integration of cryptography. Each functionality has three associated functions depending on the level of security needed:
+
+\begin{itemize}
+	\item \textbf{Plain Mode:} Plain text communication (without cryptography) and allows basic read/write operations and UID reading without prior authentication. It is useful for testing or low security scenarios.
+	
+	\item \textbf{MAC Mode:} In this mode each command is accompanied by a ``Message Authentication Code'' (MAC) calculated with AES-128, guaranteeing the integrity and authenticity of the commands and preventing alterations in transit. It requires the user to provide the AES key (16 bytes) and the key number (\texttt{keyNumber}).
+	
+	\item \textbf{Fully Secure Mode:} It establishes an end-to-end encrypted channel after AES-128 mutual authentication. All exchanged data (commands and responses) travel encrypted, protecting confidentiality, making it ideal for high security applications: critical access control, contactless payment, etc.
+\end{itemize}
+
+For reading the UID, there are two different functions depending if we are using random or fixed UIDs:
+
+\begin{itemize}
+	\item \texttt{DNA\_StatusCode DNA\_Full\_GetCardUID(byte* backUID\_7B)}: this function is used to read fixed UIDs.
+	\item \texttt{void DNA\_Plain\_GetCardUID(byte* backUID\_7B)}: this function is used to read random UIDs.
+\end{itemize}
+
+For reading data, there are two different functions depending if the user needs to read a file or a whole memory page:
+
+\begin{itemize}
+	\item \texttt{ntag424\_ReadData(uint8\_t file, uint8\_t offset, uint8\_t *buffer, uint8\_t length)}: Allows data to be read from a specific file on the NTAG424 card. Parameters allow the user to specify the file that is being read, the offset which indicates the initial position where the data will start to be read, the buffer where the read data will be stored and the length in bytes of the data.
+	
+	\item \texttt{ntag424\_ReadPage(uint8\_t page, uint8\_t *buffer)}: It is an auxiliary function that allows the user to read a whole page in the case that memory is divided into fixed pages.
+\end{itemize}
+
+As well as reading a card, the writing process depends if the user wants to write a file or a memory page:
+
+\begin{itemize}
+	\item \texttt{ntag424\_WriteData(uint8\_t file, uint8\_t offset, uint8\_t *data, uint8\_t length)}: The parameters are analogous to the corresponding reading function.
+	\item \texttt{ntag424\_WritePage(uint8\_t page, uint8\_t *data)}: Writes directly a page of memory.
+\end{itemize}
+
+Last but not least, this library includes some functions to cover the functionalities of authentication and key management:
+
+\begin{itemize}
+	\item \texttt{ntag424\_AuthenticateAES(uint8\_t keyNumber, uint8\_t *key)}: Performs mutual authentication using an AES-128 key. It allows the user to select which of the keys will be used to establish a secure session.
+	
+	\item \texttt{ntag424\_ChangeKey(uint8\_t keyNumber, uint8\_t *newKey)}: Once mutual authentication has been successfully established, this function allows updating the AES key associated with the specified \texttt{keyNumber}, replacing the old key with a new (16-byte) key.
+\end{itemize}
+
+Also, this library implements a system with several status codes, documented in the README of the GitHub, which help the developer to document the different errors that could appear during the course of the project. The code ``0'' represents a successful operation and the codes ``1--34'' the different errors that can be found. Finally, regarding the integration with the Arduino IDE, this library is included in the library manager, which means that the user can install it directly from it and all the dependencies will be managed automatically by the IDE.
+
+\subsection{Adafruit-PN532-NTAG424}
+
+The Adafruit-PN532-NTAG424 library \cite{ref27} is another tool for interfacing with the NTAG424 DNA chips and the PN532 reader, both essential elements in the development of secure access control systems based on NFC technology. This repository allows developers to integrate advanced security functionalities into their projects, focused on access protection through authentication and encryption.
+
+This library provides a set of functionalities that enable robust interaction between the microcontroller and the NTAG424 DNA chips. These NFC tags are highly secure due to their ability to handle AES-128 encryption and SUN (Secure Unique NFC) signatures. The main features of this library include:
+
+\begin{itemize}
+	\item \textbf{Support for NTAG424 DNA:} The use of NTAG424 DNA chips ensures an advanced level of security in authentication applications, which is essential in access control systems. The library allows reading and writing data in these tags, in addition to performing cryptographic operations such as authentication and SUN signature generation.
+	
+	\item \textbf{AES-128 encryption:} As in other advanced libraries, Adafruit-PN532-NTAG424 supports AES-128 encryption, which ensures that the data transmitted between the tag and the reader is secure. This helps prevent cloning or spoofing attacks.
+	
+	\item \textbf{PN532 reader compatibility:} The library is designed to work natively with the PN532 reader, one of the most popular readers in the NFC developer community. This ensures that the hardware used in the project can be easily integrated and managed with this tool.
+\end{itemize}
+
+
+\section{Integrated circuit communication protocols}
+
+This section presents the linking mechanisms used for the interconnection between the different modules of the embedded system, and discusses each protocol in terms of its operation, advantages and disadvantages in the context of an NFC-based access control system.
+
+\subsection{Serial Peripheral Interface (SPI)}
+
+SPI (Serial Peripheral Interface) \cite{ref17} is a synchronous communication protocol developed by Motorola in 1979 to allow serial data transmission between microcontrollers and peripheral devices such as sensors, EEPROM memories, A/D converters and communication modules. Its design is based on four main signal lines:
+
+\begin{itemize}
+	\item \textbf{SCLK (Serial Clock):} Clock signal generated by the master to synchronize communication.
+	\item \textbf{MOSI (Master Out - Slave In):} Data line used to send information from the master to the slaves.
+	\item \textbf{MISO (Master In - Slave Out):} Data line used to transmit information from the slave to the master.
+	\item \textbf{SS (Slave Select):} Selection line that allows the master to activate or deactivate communication with a particular slave.
+\end{itemize}
+
+SPI operates on a single-master scheme, where a single master device controls the communication and selects the slaves via SS control signals. Unlike other protocols such as I2C, it does not require device addresses, which allows for faster and more efficient data transfer, albeit with more physical connections \cite{ref16}.
+
+SPI defines four modes of operation based on two parameters:
+
+\begin{itemize}
+	\item \textbf{CPOL (Clock Polarity):} defines the inactive state of the clock (high or low).
+	\item \textbf{CPHA (Clock Phase):} Determines on which clock edge (rising or falling) the data is transmitted and sampled.
+\end{itemize}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|l|}
+		\hline
+		\textbf{Mode} & \textbf{CPOL} & \textbf{CPHA} & \textbf{Description} \\ \hline
+		0             & 0             & 0             & Data captured on rising edge and sent on falling edge. \\ \hline
+		1             & 0             & 1             & Data captured on falling edge and sent on rising edge. \\ \hline
+		2             & 1             & 0             & Data captured on falling edge and sent on rising edge. \\ \hline
+		3             & 1             & 1             & Data captured on rising edge and sent on falling edge. \\ \hline
+	\end{tabular}
+	\caption{SPI modes of operation}
+	\label{tab:spi_modes}
+\end{table}
+
+There are some advantages that SPI offers in relation to other protocols. It provides high-speed communication without a defined maximum transfer rate. Also, it can transmit and receive data simultaneously (Full-duplex). Furthermore, one of its more outstanding features is its low consumption of computational resources, since it does not require additional processing for error control or addressing.
+
+However, SPI has some limitations as well. It requires more physical lines compared to protocols such as I2C, which can be a problem in systems with multiple devices. Moreover, it does not include data reception confirmation mechanisms (ACK/NACK); neither does it support multi-master communication.
+
+\subsection{UART (Universal Asynchronous Receiver-Transmitter)}
+
+The UART (Universal Asynchronous Receiver-Transmitter) protocol is one of the most widely used methods for transmitting data between electronic devices. It is an asynchronous serial communication protocol that allows the communication between microcontrollers, computers and other embedded devices without the need for a shared clock signal.
+
+UART is a communication protocol based on sending serial data, which means that it transmits bits one by one over a data line. Unlike other protocols such as SPI or I2C, when UART is being used, each device manages its own internal timing based on a predefined baud rate.
+
+UART data packets include the following elements:
+
+\begin{itemize}
+	\item \textbf{Start Bit:} Indicates the start of transmission by lowering the data line from a high state to a low state.
+	\item \textbf{Data bits:} These can be from 5 to 9 bits, depending on the configuration. Normally, they are sent in order of lowest to highest weight.
+	\item \textbf{Parity Bit (Optional):} Used for error detection by checking whether the number of bits in '1' is odd or even.
+	\item \textbf{Stop Bits:} Indicate the end of transmission by taking the data line to a high state for one or two cycles \cite{ref18}.
+\end{itemize}
+
+For UART communication to be successful, both devices must be configured with the same parameters:
+
+\begin{itemize}
+	\item \textbf{Baud Rate:} Data transmission rate in bits per second (bps).
+	\item \textbf{Number of Data Bits:} Generally 8 bits in modern systems.
+	\item \textbf{Parity:} Can be none, even or odd, depending on whether error checking is required.
+	\item \textbf{Stop Bits:} Usually 1 or 2 bits.
+\end{itemize}
