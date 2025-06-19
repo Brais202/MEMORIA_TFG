@@ -37,9 +37,9 @@
 \contentsline {figure}{\numberline {6.1}{\ignorespaces \xpg@aux {}{galician}NACU and Test Cards. From left to right, the Arduino Uno, MFRC522, ESP32 and magnetic lock can be seen. Also, the three cards at the back are the ones used to test the system.}}{69}{figure.caption.63}%
 \contentsline {figure}{\numberline {6.2}{\ignorespaces \xpg@aux {}{galician}ACMS Architecture Scheme including HSM, the web server and the default Django model database}}{70}{figure.caption.64}%
 \contentsline {figure}{\numberline {6.3}{\ignorespaces \xpg@aux {}{galician}Administration Default Login system}}{71}{figure.caption.65}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces \xpg@aux {}{galician}Log List Administration View}}{72}{figure.caption.66}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces \xpg@aux {}{galician}Key Management System in the HSM}}{74}{figure.caption.68}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces \xpg@aux {}{galician}Role Management view}}{75}{figure.caption.69}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces \xpg@aux {}{galician}Unauthorized Mails Example}}{76}{figure.caption.70}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces \xpg@aux {}{galician}Log List Administration View}}{71}{figure.caption.66}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces \xpg@aux {}{galician}Key Management System in the HSM}}{73}{figure.caption.68}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces \xpg@aux {}{galician}Role Management view}}{74}{figure.caption.69}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces \xpg@aux {}{galician}Unauthorized Mails Example}}{75}{figure.caption.70}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

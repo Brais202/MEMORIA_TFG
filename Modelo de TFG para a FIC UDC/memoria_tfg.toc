@@ -96,12 +96,12 @@
 \contentsline {chapter}{\numberline {6}Results and Discussion}{68}{chapter.6}%
 \contentsline {section}{\numberline {6.1}NFC Access Control Unit (NACU)}{68}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Access Control Management Server (ACMS)}{69}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Defined Endpoints}{73}{subsection.6.2.1}%
-\contentsline {section}{\numberline {6.3}Key Management and Security System}{73}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Access Control System Secure Communications}{74}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Role-based Access Control Management}{74}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Real-time Unauthorized Access Attempt Alert System}{75}{section.6.6}%
-\contentsline {chapter}{\numberline {7}Conclusions and Future Research}{77}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Future Research}{77}{section.7.1}%
-\contentsline {chapter}{\numberline {A}Material adicional}{80}{appendix.A}%
-\contentsline {chapter}{Bibliografía}{82}{appendix*.71}%
+\contentsline {subsection}{\numberline {6.2.1}Defined Endpoints}{72}{subsection.6.2.1}%
+\contentsline {section}{\numberline {6.3}Key Management and Security System}{72}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Access Control System Secure Communications}{73}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Role-based Access Control Management}{73}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Real-time Unauthorized Access Attempt Alert System}{74}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Conclusions and Future Research}{76}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Future Research}{76}{section.7.1}%
+\contentsline {chapter}{\numberline {A}Material adicional}{79}{appendix.A}%
+\contentsline {chapter}{Bibliografía}{81}{appendix*.71}%

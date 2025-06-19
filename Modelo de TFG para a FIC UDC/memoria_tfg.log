@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.6.14)  18 JUN 2025 23:40
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.6.14)  19 JUN 2025 11:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1952,8 +1952,19 @@ LaTeX Font Info:    Font shape `TU/LinLibertine(0)/b/n' will be
 \openout2 = `portada/resumo.aux'.
 
  (portada/resumo.tex (portada/palabras_chave.tex
-Overfull \hbox (109.54259pt too wide) in paragraph at lines 5--2
-\TU/LinLibertine(0)/m/n/10.95 zed management server. [][]
+Overfull \hbox (2.44205pt too wide) in paragraph at lines 8--2
+[]\TU/LinLibertine(0)/m/n/10.95 Physical access control today is dominated by p
+rivate, proprietary solutions that are closed,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
  []
 
 
@@ -2330,16 +2341,16 @@ File: imaxes/MICROCONTROLLERESP32.png Graphic file (type bmp)
 
 [50]
 
-LaTeX Warning: Reference `fig:3.2' on page 51 undefined on input line 326.
+LaTeX Warning: Reference `fig:3.2' on page 51 undefined on input line 327.
 
 
-Overfull \hbox (22.37909pt too wide) in paragraph at lines 326--327
+Overfull \hbox (22.37909pt too wide) in paragraph at lines 327--328
 \TU/LinLibertine(0)/m/n/10.95 checks that RndA matches the decrypted value ([])
 , and completes the mutual‑authentication
  []
 
 
-Overfull \hbox (66.14629pt too wide) in paragraph at lines 331--332
+Overfull \hbox (66.14629pt too wide) in paragraph at lines 332--333
 \TU/LinLibertine(0)/m/n/10.95 NTAG424 DNA card (Plain Mode), the following flow
  is implemented, inspired by the \TU/LinLibertine(5)/m/n/10.95 Plain_WriteData
  []
@@ -2349,7 +2360,7 @@ File: imaxes/NDEFWIRTE.png Graphic file (type bmp)
 
 
 [51]
-Overfull \hbox (3.05966pt too wide) in paragraph at lines 356--357
+Overfull \hbox (3.05966pt too wide) in paragraph at lines 357--358
 \TU/LinLibertine(0)/m/n/10.95 from the MFRC522_NTAG424DNA library, in which aft
 er a card is selected and detected(FIgure
  []
@@ -2372,7 +2383,7 @@ File: imaxes/FINALFLOW.png Graphic file (type bmp)
 
 
 [55]
-Overfull \hbox (3.93288pt too wide) in paragraph at lines 427--428
+Overfull \hbox (3.93288pt too wide) in paragraph at lines 428--429
 \TU/LinLibertine(5)/m/n/10.95 core/models.py \TU/LinLibertine(0)/m/n/10.95 and 
 registered in the administration panel through \TU/LinLibertine(5)/m/n/10.95 co
 re/admin.py\TU/LinLibertine(0)/m/n/10.95 ,
@@ -2393,14 +2404,14 @@ File: imaxes/hsm.png Graphic file (type bmp)
 
 
 [59]
-Overfull \hbox (64.32198pt too wide) in paragraph at lines 527--528
+Overfull \hbox (64.32198pt too wide) in paragraph at lines 528--529
 []\TU/LinLibertine(0)/m/n/10.95 Django’s \TU/LinLibertine(5)/m/n/10.95 runserve
 r \TU/LinLibertine(0)/m/n/10.95 default command only exposes HTTP (no encryptio
 n). \TU/LinLibertine(5)/m/n/10.95 Django-sslserver
  []
 
 
-Overfull \hbox (2.51947pt too wide) in paragraph at lines 531--532
+Overfull \hbox (2.51947pt too wide) in paragraph at lines 532--533
 \TU/LinLibertine(0)/m/n/10.95 the TLS protocol and can accept self-signed certi
 ficates if configured with \TU/LinLibertine(5)/m/n/10.95 setInsecure()\TU/LinLi
 bertine(0)/m/n/10.95 .
@@ -2409,7 +2420,7 @@ bertine(0)/m/n/10.95 .
 
 
 [60]
-Overfull \hbox (80.36772pt too wide) in paragraph at lines 543--544
+Overfull \hbox (80.36772pt too wide) in paragraph at lines 544--545
 []\TU/LinLibertine(0)/m/n/10.95 Furthermore, the ACMS development instance is l
 aunched in HTTPS mode, via the \TU/LinLibertine(5)/m/n/10.95 django-sslserver
  []
@@ -2417,7 +2428,7 @@ aunched in HTTPS mode, via the \TU/LinLibertine(5)/m/n/10.95 django-sslserver
 
 
 [61]
-Overfull \hbox (1.04767pt too wide) in paragraph at lines 569--570
+Overfull \hbox (1.04767pt too wide) in paragraph at lines 570--571
 []\TU/LinLibertine(0)/m/n/10.95 When invoked before processing the \TU/LinLiber
 tine(5)/m/n/10.95 AppKey0 \TU/LinLibertine(0)/m/n/10.95 derivation, \TU/LinLibe
 rtine(5)/m/n/10.95 parse_reader_number
@@ -2425,7 +2436,7 @@ rtine(5)/m/n/10.95 parse_reader_number
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 573.
+(hyperref)                removing `\\' on input line 574.
 
 
 
@@ -2480,11 +2491,6 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 [65]
 
-Package natbib Warning: Citation `Ref51' on page 66 undefined on input line 668
-.
-
-
-
 [66])
 
 [67]
@@ -2517,8 +2523,6 @@ File: imaxes/loglist.png Graphic file (type bmp)
 
 
 [71]
-
-[72]
 Underfull \hbox (badness 10000) in paragraph at lines 87--87
 []|\TU/LinLibertine(0)/b/n/10.95 Request pay-
  []
@@ -2615,7 +2619,7 @@ Overfull \hbox (7.59097pt too wide) in paragraph at lines 85--93
 
 
 
-[73
+[72
 
 ]
 File: imaxes/KEY_MANA.png Graphic file (type bmp)
@@ -2628,7 +2632,7 @@ d to derive AppKey0 via HMAC-SHA256
 
 
 
-[74]
+[73]
 File: imaxes/Roles.png Graphic file (type bmp)
 <imaxes/Roles.png>
 File: imaxes/MAIL.png Graphic file (type bmp)
@@ -2639,16 +2643,16 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 )
 
-[75]
+[74]
 
-[76]
+[75]
 \openout2 = `contido/conclusions.aux'.
 
  (contido/conclusions.tex
 Capítulo 7.
 
 
-[77
+[76
 
 
 
@@ -2661,12 +2665,12 @@ d power consumption metrics. Com-
 
 )
 
-[78]
+[77]
 LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
 (Font)              scaled to size 24.88pt on input line 101.
 
 
-[79
+[78
 
 
 
@@ -2677,7 +2681,7 @@ LaTeX Font Info:    Font shape `TU/LinLibertine(0)/m/n' will be
 Apéndice A.
 )
 
-[80
+[79
 
 
 ]
@@ -2685,7 +2689,7 @@ No file memoria_tfg.acr.
 No file memoria_tfg.gls.
 (memoria_tfg.bbl
 
-[81
+[80
 
 
 ]
@@ -2703,7 +2707,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 69--73
 
 
 
-[82
+[81
 
 ]
 Underfull \hbox (badness 1152) in paragraph at lines 88--92
@@ -2747,7 +2751,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--129
 
 
 
-[83]
+[82]
 Underfull \hbox (badness 10000) in paragraph at lines 150--153
 [] [] [][][] [] [][][][][][][][][] [] [][][] [] [][][][][][][][][] [] [][][][][
 ][][][][][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -2756,7 +2760,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 150--153
 
 
 
-[84]
+[83]
 Underfull \hbox (badness 10000) in paragraph at lines 225--229
 []\TU/LinLibertine(0)/m/n/10.95 EMACS Seguridad S.L., “Detalle de seos y compar
 ativa con mifare desfi-
@@ -2803,7 +2807,7 @@ Overfull \hbox (35.52658pt too wide) in paragraph at lines 231--236
 
 
 
-[85]
+[84]
 Underfull \hbox (badness 10000) in paragraph at lines 284--287
 []\TU/LinLibertine(0)/m/n/10.95 A. ABLOY. (2025) Exit buttons – rex buttons. [O
 nline]. Available: [][]$[][][][][] []
@@ -2845,7 +2849,7 @@ Underfull \hbox (badness 1014) in paragraph at lines 306--310
 
 
 
-[86]
+[85]
 Underfull \hbox (badness 3407) in paragraph at lines 356--358
 []\TU/LinLibertine(0)/m/n/10.95 B. Gómez, “accesscontrol_server,” 2025, [Online
 ]. Available: [][]$[][][][][] [] [] [] [][][][][][] [] [][][] []
@@ -2866,7 +2870,7 @@ Underfull \hbox (badness 1205) in paragraph at lines 380--384
 
 
 
-[87]
+[86]
 Underfull \hbox (badness 2495) in paragraph at lines 402--405
 \TU/LinLibertine(0)/m/n/10.95 2015, [Online]. Available: [][]$[][][][][] [] [] 
 [] [][][][] [] [][][][][][][][][][][] [] [][][] [] [][][][][][] [] [][][][][][]
@@ -2881,13 +2885,9 @@ ne]. Available: [][]$[][][][][] [] [] [] [][][][][][] [] [][][] []
 
 
 
-[88])
+[87])
 
-[89]
-
-Package natbib Warning: There were undefined citations.
-
-(memoria_tfg.aux (portada/portada.aux) (portada/resumo.aux)
+[88] (memoria_tfg.aux (portada/portada.aux) (portada/resumo.aux)
 (contido/introducion.aux) (contido/Background.aux) (contido/StateOfArt.aux)
 (contido/Methodology.aux) (contido/development.aux) (contido/RaD.aux)
 (contido/conclusions.aux) (anexos/adicional.aux))
@@ -2906,12 +2906,12 @@ Package rerunfilecheck Info: File `memoria_tfg.out' has not changed.
 (rerunfilecheck)             Checksum: BFA858E2AFCFF4F4CA7120579E107BDC;7161.
  ) 
 Here is how much of TeX's memory you used:
- 38453 strings out of 403340
- 797050 string characters out of 5462686
- 1225749 words of memory out of 5000000
- 66243 multiletter control sequences out of 15000+600000
+ 38452 strings out of 403340
+ 797030 string characters out of 5462686
+ 1225731 words of memory out of 5000000
+ 66242 multiletter control sequences out of 15000+600000
  638712 words of font info for 133 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  98i,14n,145p,2497b,700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on memoria_tfg.pdf (99 pages).
+Output written on memoria_tfg.pdf (98 pages).

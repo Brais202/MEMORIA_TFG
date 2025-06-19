@@ -52,37 +52,37 @@ Warning--missing institution in ref31
 Done.
 You've used 84 entries,
             4783 wiz_defined-function locations,
-            1387 strings with 23654 characters,
-and the built_in function-call counts, 53436 in all, are:
-= -- 5061
+            1388 strings with 23630 characters,
+and the built_in function-call counts, 53499 in all, are:
+= -- 5068
 > -- 1235
 < -- 240
 + -- 631
 - -- 308
-* -- 2396
-:= -- 8719
-add.period$ -- 190
+* -- 2399
+:= -- 8729
+add.period$ -- 191
 call.type$ -- 84
-change.case$ -- 213
+change.case$ -- 214
 chr.to.int$ -- 449
 cite$ -- 86
-duplicate$ -- 3834
-empty$ -- 4112
+duplicate$ -- 3838
+empty$ -- 4121
 format.name$ -- 427
-if$ -- 11698
+if$ -- 11714
 int.to.chr$ -- 4
 int.to.str$ -- 85
 missing$ -- 735
 newline$ -- 273
 num.names$ -- 240
-pop$ -- 1943
+pop$ -- 1949
 preamble$ -- 1
 purify$ -- 83
 quote$ -- 4
-skip$ -- 4164
+skip$ -- 4166
 stack$ -- 0
-substring$ -- 1228
-swap$ -- 2473
+substring$ -- 1229
+swap$ -- 2475
 text.length$ -- 55
 text.prefix$ -- 2
 top$ -- 7
@@ -90,5 +90,5 @@ type$ -- 1295
 warning$ -- 1
 while$ -- 239
 width$ -- 0
-write$ -- 921
+write$ -- 922
 (There was 1 error message)

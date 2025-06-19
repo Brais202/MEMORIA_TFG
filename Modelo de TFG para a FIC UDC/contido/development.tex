@@ -239,7 +239,7 @@ Therefore, pin connections are established as follows (Figure \ref{fig:ESP32-Ard
 Each module receives independent power through its connectors, ensuring stability and electrical isolation. Once this UART transport layer is established, access control protocols and HSM commands can be implemented on it without risk of data loss or overlapping.
 
 \subsection{Physical lock integration}
-\label{sec:NACU2}
+
 
 To incorporate the LIBO 12 V/180 kg magnetic lock into the access control prototype, a Dollatek DC 0-5 V relay module is used to interface between the Arduino Uno and the 12 V power supply of the lock (Figure: \ref{fig:maglock_arduino}).
 
@@ -257,6 +257,7 @@ The NO (Normally Open) terminal of the relay goes to the positive power terminal
 \end{figure}
 
 \section{NFC Access Control Unit (NACU)}
+\label{sec:NACU2}
 
 The objective of this section is to describe how the modular hardware part of the system is created using an iterative scope. In each step, a new module is added and its ability to communicate with the already‑tested modules is verified using the relevant protocol so that by the end of the cycle every hardware element has been proven capable of interoperating reliably under the conditions it will face in the completed system.
 
@@ -665,7 +666,7 @@ USER2 is out of its allowed schedule, which means that the lock does not unlock.
 
 This project is deeply focused on security, providing confidentiality, authenticity and integrity in identification systems, mitigating threats inherent to the technologies used and IoT environments.
 
-Regarding NFC~\cite{Ref54}, one of the main threats is eavesdropping. Communication between two devices over an NFC channel can be intercepted using several devices such as Flipper Zero~\cite{Ref51} or Proxmark 3~\cite{Ref55}, which are designed to exploit vulnerabilities in systems that use ISO 14443A NFC. Although the required physical proximity (less than 10 cm) limits the attack, the use of high-gain antennas or resonant couplings can extend the effective range.
+Regarding NFC~\cite{Ref54}, one of the main threats is eavesdropping. Communication between two devices over an NFC channel can be intercepted using several devices such as Flipper Zero or Proxmark 3~\cite{Ref55}, which are designed to exploit vulnerabilities in systems that use ISO 14443A NFC. Although the required physical proximity (less than 10 cm) limits the attack, the use of high-gain antennas or resonant couplings can extend the effective range.
 
 Another risk, related to eavesdropping, is cloning or tag impersonation, which consists in an attacker uploading a stolen NFC tag in another device such as ChameleonMini \cite{Ref57}, trying to impersonate its legit owner. Thanks to mutual authentication, none of these attacks are effective in this system: an attacker could obtain the \texttt{CardId}, but this does not compromise the user nor the whole system. Without access to the HSM it is impossible to derive \texttt{AppKey0}.
 
